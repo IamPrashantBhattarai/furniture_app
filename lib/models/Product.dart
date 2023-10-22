@@ -26,7 +26,7 @@ class Product {
 }
 
 //Our demo Product
-Product product1 = Product(
+Product product = Product(
   id: "1",
   price: 1600,
   title: "Wood Frame",
