@@ -11,16 +11,12 @@ Future<List<Category>> fetchCategories() async {
   final response = await http.get(apiUrl as Uri);
 
   if (response.statusCode == 200) {
-    // If the server did return a 200 OK response,
-    // then parse the JSON.
     List<Category> categories = (json.decode(response.body) as List)
         .map((data) => Category.fromJson(data))
         .toList();
 // It retuen list of categories
     return categories;
   } else {
-    // If the server did not return a 200 OK response,
-    // then throw an exception.
     throw Exception('Failed to load');
   }
 }
