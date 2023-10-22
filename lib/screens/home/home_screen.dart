@@ -2,6 +2,7 @@ import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:furniture_ui/constants.dart';
 import 'package:furniture_ui/size_config.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -26,6 +27,27 @@ class HomeScreen extends StatelessWidget {
         ),
         onPressed: () {},
       ),
+      actions: <Widget>[
+        IconButton(
+          onPressed: () {},
+          icon: SvgPicture.asset(
+            "assets/icons/scan.svg",
+            height: SizeConfig.defaultSize,
+          ),
+        ),
+        Center(
+          child: Text(
+            "Scan",
+            style: TextStyle(
+              color: kTextColor,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        SizedBox(
+          width: SizeConfig.defaultSize,
+        ),
+      ],
     );
   }
 }
