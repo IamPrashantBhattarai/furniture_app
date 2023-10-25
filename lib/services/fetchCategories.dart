@@ -15,6 +15,7 @@ Future<List<Category>> fetchCategories() async {
         .map((data) => Category.fromJson(data))
         .toList();
 // It retuen list of categories
+//     print(categories)
     return categories;
   } else {
     throw Exception('Failed to load');
