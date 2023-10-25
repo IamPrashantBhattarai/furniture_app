@@ -49,6 +49,10 @@ class CategoryCustomShape extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     Path path = Path();
+    double height = size.height;
+    double width = size.width;
+    int cornerSize = 30;
+
     return path;
   }
 
