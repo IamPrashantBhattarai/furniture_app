@@ -21,14 +21,18 @@ class Body extends StatelessWidget {
             child: AspectRatio(
               aspectRatio: 0.83,
               child: Stack(
-                children: [
+                alignment: Alignment.bottomCenter,
+                children: <Widget>[
                   Container(
                     color: Colors.blueGrey,
                   ),
-                  AspectRatio(
-                    aspectRatio: 1.025,
-                    child: Container(
-                      color: kSecondaryColor,
+                  //As this is our custom shape so we should use ClipPath for round corners
+                  ClipPath(
+                    child: AspectRatio(
+                      aspectRatio: 1.025,
+                      child: Container(
+                        color: kSecondaryColor,
+                      ),
                     ),
                   )
                 ],
@@ -38,5 +42,18 @@ class Body extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+class CategoryCustomShape extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    Path path = Path();
+    return path;
+  }
+
+  @override
+  bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
+    return true;
   }
 }
