@@ -26,7 +26,9 @@ class Body extends StatelessWidget {
                 ? Categories(
                     categories: snapshot.data ?? [],
                   )
-                : CircularProgressIndicator(),
+                : Center(
+                    child: Image.asset("assets/ripple.gif"),
+                  ),
           )
         ],
       ),
@@ -35,7 +37,7 @@ class Body extends StatelessWidget {
 }
 
 class Categories extends StatelessWidget {
-  const Categories({
+  Categories({
     super.key,
     required List<Category> categories,
   }) : categories = categories;
