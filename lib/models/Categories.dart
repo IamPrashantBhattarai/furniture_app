@@ -2,7 +2,11 @@ class Category {
   final String? id, title, image;
   final int? numOfProducts;
 
-  Category({this.id, this.title, this.image, this.numOfProducts});
+  Category(
+      {required this.id,
+      required this.title,
+      required this.image,
+      required this.numOfProducts});
 
   factory Category.fromJson(Map<String, dynamic> json) {
     return Category(
@@ -13,11 +17,3 @@ class Category {
     );
   }
 }
-
-//Our demo Category
-Category category = Category(
-  id: "1",
-  title: "Armchair",
-  image: "https://i.imgur.com/JqKDdxj.png",
-  numOfProducts: 150,
-);

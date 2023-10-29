@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:furniture_ui/models/Categories.dart';
 import 'package:http/http.dart' as http;
 
@@ -14,8 +13,7 @@ Future<List<Category>> fetchCategories() async {
     List<Category> categories = (json.decode(response.body) as List)
         .map((data) => Category.fromJson(data))
         .toList();
-// It retuen list of categories
-//     print(categories)
+// It return list of categories
     return categories;
   } else {
     throw Exception('Failed to load');
