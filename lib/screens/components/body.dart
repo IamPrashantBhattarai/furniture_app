@@ -25,7 +25,6 @@ class Body extends StatelessWidget {
               future: fetchCategories(),
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
-                  print(snapshot.data);
                   return Categories(categories: snapshot.data!);
                 } else {
                   return Center(child: Image.asset("assets/ripple.gif"));
