@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:furniture_ui/components/title_text.dart';
-import 'package:furniture_ui/models/Categories.dart';
-import 'package:furniture_ui/screens/components/category_card.dart';
+import 'package:furniture_ui/screens/components/categories.dart';
 import 'package:furniture_ui/services/fetch_Categories.dart';
 import 'package:furniture_ui/size_config.dart';
 
@@ -31,31 +30,6 @@ class Body extends StatelessWidget {
                 }
               })
         ],
-      ),
-    );
-  }
-}
-
-//ignore: must_be_immutable
-class Categories extends StatelessWidget {
-  Categories({
-    super.key,
-    required this.categories,
-  });
-
-  final List<Category> categories;
-
-  @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        children: List.generate(
-          categories.length,
-          (index) => CategoryCard(
-            category: categories[index],
-          ),
-        ),
       ),
     );
   }
