@@ -4,6 +4,7 @@ import 'package:furniture_ui/components/title_text.dart';
 import 'package:furniture_ui/constants.dart';
 import 'package:furniture_ui/models/Product.dart';
 import 'package:furniture_ui/screens/components/categories.dart';
+import 'package:furniture_ui/screens/components/product_card.dart';
 import 'package:furniture_ui/services/fetch_Categories.dart';
 import 'package:furniture_ui/size_config.dart';
 
@@ -40,59 +41,35 @@ class Body extends StatelessWidget {
             padding: EdgeInsets.all(defaultSize * 2),
             child: const TitleText(title: "Recommends for You"),
           ),
-          ProductCard(
-            product: product,
-            press: () {},
-          )
+          RecommandProducts()
         ],
       ),
     );
   }
 }
 
-class ProductCard extends StatelessWidget {
-  const ProductCard({
+class RecommandProducts extends StatelessWidget {
+  const RecommandProducts({
     super.key,
-    required this.product,
-    required this.press,
   });
-
-  final Product product;
-  final Function press;
 
   @override
   Widget build(BuildContext context) {
     double? defaultSize = SizeConfig.defaultSize;
-    return GestureDetector(
-      onTap: press,
-      child: Container(
-        width: defaultSize! * 14.5,
-        decoration: BoxDecoration(
-          color: kSecondaryColor,
-          borderRadius: BorderRadius.circular(30),
+    return Padding(
+      padding: EdgeInsets.all(defaultSize! * 2),
+      child: GridView.builder(
+        shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
+        itemCount: 2,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          mainAxisSpacing: 20,
+          crossAxisSpacing: 30,
+          childAspectRatio: 0.693,
         ),
-        child: AspectRatio(
-          aspectRatio: 0.693,
-          child: Column(
-            children: <Widget>[
-              AspectRatio(
-                aspectRatio: 1,
-                child: FadeInImage.assetNetwork(
-                  placeholder: "assets/spinner.gif",
-                  image: product.image,
-                  fit: BoxFit.cover,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: defaultSize),
-                child: TitleText(title: product.title),
-              ),
-              SizedBox(height: defaultSize / 2),
-              Text("\$${product.price}"),
-              Spacer(),
-            ],
-          ),
-        ),
+        itemBuilder: (context, index) =>
+            ProductCard(product: product, press: () {}),
       ),
     );
   }
