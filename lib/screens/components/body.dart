@@ -1,10 +1,6 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:furniture_ui/components/title_text.dart';
-import 'package:furniture_ui/constants.dart';
-import 'package:furniture_ui/models/Product.dart';
 import 'package:furniture_ui/screens/components/categories.dart';
-import 'package:furniture_ui/screens/components/product_card.dart';
 import 'package:furniture_ui/screens/components/recommand_products.dart';
 import 'package:furniture_ui/services/fetch_Categories.dart';
 import 'package:furniture_ui/services/fetch_Products.dart';
