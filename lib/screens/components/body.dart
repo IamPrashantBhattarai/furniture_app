@@ -49,7 +49,7 @@ class Body extends StatelessWidget {
                     ? RecommandProducts(
                         products: snapshot.data!,
                       )
-                    : CircularProgressIndicator();
+                    : Center(child: Image.asset("assets/ripple.gif"));
               })
         ],
       ),
