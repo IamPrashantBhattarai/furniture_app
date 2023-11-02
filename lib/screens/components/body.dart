@@ -6,6 +6,7 @@ import 'package:furniture_ui/models/Product.dart';
 import 'package:furniture_ui/screens/components/categories.dart';
 import 'package:furniture_ui/screens/components/product_card.dart';
 import 'package:furniture_ui/services/fetch_Categories.dart';
+import 'package:furniture_ui/services/fetch_Products.dart';
 import 'package:furniture_ui/size_config.dart';
 
 class Body extends StatelessWidget {
@@ -41,7 +42,15 @@ class Body extends StatelessWidget {
             padding: EdgeInsets.all(defaultSize * 2),
             child: const TitleText(title: "Recommends for You"),
           ),
-          RecommandProducts()
+          FutureBuilder(
+              future: fetchProducts(),
+              builder: (context, snapshot) {
+                return snapshot.hasData
+                    ? RecommandProducts(
+                        products: snapshot.data!,
+                      )
+                    : CircularProgressIndicator();
+              })
         ],
       ),
     );
@@ -51,7 +60,10 @@ class Body extends StatelessWidget {
 class RecommandProducts extends StatelessWidget {
   const RecommandProducts({
     super.key,
+    required this.products,
   });
+  //Because our Api provides the list of the products
+  final List<Product> products;
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +73,7 @@ class RecommandProducts extends StatelessWidget {
       child: GridView.builder(
         shrinkWrap: true,
         physics: NeverScrollableScrollPhysics(),
-        itemCount: 2,
+        itemCount: products.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           mainAxisSpacing: 20,
@@ -69,7 +81,7 @@ class RecommandProducts extends StatelessWidget {
           childAspectRatio: 0.693,
         ),
         itemBuilder: (context, index) =>
-            ProductCard(product: product, press: () {}),
+            ProductCard(product: products[index], press: () {}),
       ),
     );
   }
