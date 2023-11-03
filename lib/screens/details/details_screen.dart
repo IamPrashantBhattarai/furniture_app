@@ -7,6 +7,8 @@ class DetailsScreen extends StatelessWidget {
   const DetailsScreen({Key? key, required this.product}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return const Scaffold(
+      Text("hello my love");
+    );
   }
 }
