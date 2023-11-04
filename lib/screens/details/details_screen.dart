@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:furniture_ui/constants.dart';
 import 'package:furniture_ui/models/Product.dart';
 
 class DetailsScreen extends StatelessWidget {
@@ -7,8 +8,14 @@ class DetailsScreen extends StatelessWidget {
   const DetailsScreen({Key? key, required this.product}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      Text("hello my love");
+    return Scaffold(
+      backgroundColor: kSecondaryColor,
+      appBar: AppBar(
+        leading: IconButton(
+          icon: SvgPicture.asset("assets/icons/arrow-long-left.svg"),
+          onPressed: () {},
+        ),
+      ),
     );
   }
 }
