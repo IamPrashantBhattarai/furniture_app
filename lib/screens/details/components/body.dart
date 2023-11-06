@@ -39,6 +39,17 @@ class Body extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: defaultSize * 2),
+                Text(
+                  "Form",
+                  style: lightTextStyle,
+                ),
+                Text(
+                  "\$${product.price}",
+                  style: TextStyle(
+                      fontSize: defaultSize * 1.6,
+                      fontWeight: FontWeight.bold,
+                      height: 1.6),
+                )
               ],
             ),
           )
