@@ -15,14 +15,30 @@ class Body extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Container(
-            height: defaultSize! * 37.5,
-            width: defaultSize! * 15,
+            padding: EdgeInsets.symmetric(horizontal: defaultSize! * 2),
+            height: defaultSize * 37.5,
+            width: defaultSize * 15,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(
-                  product.category,
+                  product.category.toString().toUpperCase(),
                   style: lightTextStyle,
-                )
+                ),
+                SizedBox(
+                  height: defaultSize,
+                ),
+                Text(
+                  product.title.toString(),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: defaultSize * 2.4,
+                    letterSpacing: -0.8,
+                    height: 1.4,
+                  ),
+                ),
+                SizedBox(height: defaultSize * 2),
               ],
             ),
           )
