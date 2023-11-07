@@ -58,14 +58,22 @@ class Body extends StatelessWidget {
                   "Available Colors",
                   style: lightTextStyle,
                 ),
-                Container(
-                  height: defaultSize * 2.4,
-                  width: defaultSize * 2.4,
-                  decoration: BoxDecoration(
-                    color: Colors.green,
-                    borderRadius: BorderRadius.circular(6),
-                  ),
-                  child: SvgPicture.asset("assets/icons/check.svg"),
+                Row(
+                  children: <Widget>[
+                    buildColorBox(
+                      defaultSize,
+                      color: Color(0xFF7BA275),
+                      isActive: true,
+                    ),
+                    buildColorBox(
+                      defaultSize,
+                      color: Color(0xFFD7D7D7),
+                    ),
+                    buildColorBox(
+                      defaultSize,
+                      color: kTextColor,
+                    ),
+                  ],
                 )
               ],
             ),
@@ -73,5 +81,21 @@ class Body extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Container buildColorBox(double defaultSize,
+      {required Color color, bool isActive = false}) {
+    return Container(
+        margin: EdgeInsets.only(top: defaultSize, right: defaultSize),
+        //const is added in order to increase the performance
+        padding: const EdgeInsets.all(5),
+        height: defaultSize * 2.4,
+        width: defaultSize * 2.4,
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(6),
+        ),
+        child:
+            isActive ? SvgPicture.asset("assets/icons/check.svg") : SizedBox());
   }
 }
