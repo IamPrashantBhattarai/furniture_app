@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:flutter_svg/flutter_svg.dart";
 import "package:furniture_ui/constants.dart";
 import "package:furniture_ui/models/Product.dart";
 import 'package:furniture_ui/size_config.dart';
@@ -49,10 +50,26 @@ class Body extends StatelessWidget {
                       fontSize: defaultSize * 1.6,
                       fontWeight: FontWeight.bold,
                       height: 1.6),
+                ),
+                SizedBox(
+                  height: defaultSize * 2,
+                ),
+                Text(
+                  "Available Colors",
+                  style: lightTextStyle,
+                ),
+                Container(
+                  height: defaultSize * 2.4,
+                  width: defaultSize * 2.4,
+                  decoration: BoxDecoration(
+                    color: Colors.green,
+                    borderRadius: BorderRadius.circular(6),
+                  ),
+                  child: SvgPicture.asset("assets/icons/check.svg"),
                 )
               ],
             ),
-          )
+          ),
         ],
       ),
     );
