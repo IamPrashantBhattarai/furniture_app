@@ -74,7 +74,7 @@ class Body extends StatelessWidget {
                       color: kTextColor,
                     ),
                   ],
-                )
+                ),
               ],
             ),
           ),
