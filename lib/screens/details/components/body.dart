@@ -15,6 +15,19 @@ class Body extends StatelessWidget {
       child: Column(
         children: <Widget>[
           ProductInfo(product: product),
+          Container(
+            height: 500,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(defaultSize! * 1.2),
+                topRight: Radius.circular(defaultSize * 1.2),
+              ),
+            ),
+            child: Column(
+              children: <Widget>[],
+            ),
+          )
         ],
       ),
     );

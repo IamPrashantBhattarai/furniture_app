@@ -76,9 +76,9 @@ class ProductInfo extends StatelessWidget {
         ],
       ),
     );
-
   }
 }
+
 Container buildColorBox(double defaultSize,
     {required Color color, bool isActive = false}) {
   return Container(
@@ -92,7 +92,5 @@ Container buildColorBox(double defaultSize,
         borderRadius: BorderRadius.circular(6),
       ),
       child:
-      isActive ? SvgPicture.asset("assets/icons/check.svg") : SizedBox());
+          isActive ? SvgPicture.asset("assets/icons/check.svg") : SizedBox());
 }
-}
-
