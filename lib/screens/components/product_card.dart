@@ -12,13 +12,13 @@ class ProductCard extends StatelessWidget {
   });
 
   final Product product;
-  final Function press;
+  final VoidCallback press;
 
   @override
   Widget build(BuildContext context) {
     double? defaultSize = SizeConfig.defaultSize;
     return GestureDetector(
-      onTap: press(),
+      onTap: press,
       child: Container(
         width: defaultSize! * 14.5,
         decoration: BoxDecoration(
