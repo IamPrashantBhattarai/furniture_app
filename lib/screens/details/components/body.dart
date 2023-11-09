@@ -50,6 +50,20 @@ class Body extends StatelessWidget {
                     height: 1.5,
                   ),
                 ),
+                SizedBox(
+                  height: defaultSize * 3,
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: Text(
+                    "Add to Cart",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: defaultSize * 1.6,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                )
               ],
             ),
           ),
