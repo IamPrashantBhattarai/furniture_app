@@ -32,11 +32,14 @@ class Body extends StatelessWidget {
             Positioned(
               top: defaultSize * 9.5,
               right: -defaultSize * 7.5,
-              child: Image.network(
-                product.image.toString(),
-                fit: BoxFit.cover,
-                height: defaultSize * 37.8,
-                width: defaultSize * 36.4,
+              child: Hero(
+                tag: product.id.toString(),
+                child: Image.network(
+                  product.image.toString(),
+                  fit: BoxFit.cover,
+                  height: defaultSize * 37.8,
+                  width: defaultSize * 36.4,
+                ),
               ),
             ),
           ],
