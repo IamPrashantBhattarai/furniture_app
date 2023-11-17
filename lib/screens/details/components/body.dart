@@ -15,7 +15,9 @@ class Body extends StatelessWidget {
     return SingleChildScrollView(
       child: SizedBox(
         width: double.infinity,
-        height: SizeConfig.screenHeight! - AppBar().preferredSize.height,
+        height: SizeConfig.orientation == Orientation.landscape
+            ? SizeConfig.screenWidth
+            : SizeConfig.screenHeight! - AppBar().preferredSize.height,
         child: Stack(
           // crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
