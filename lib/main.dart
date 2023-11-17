@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: true,
+      debugShowCheckedModeBanner: false,
       title: 'MyFurniture',
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
@@ -30,3 +30,5 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+//finally project completed with some minor issues
